@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="toolbar_delete_note" type="id">delete</item>
+    <item name="spinner_notes" type="id">delete</item>
+</resources>
