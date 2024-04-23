@@ -26,15 +26,13 @@ public class DeleteNoteActivity extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_note);
 
-        // Set up Toolbar (optional)
-        Toolbar toolbar = findViewById(R.id.toolbar_delete_note); // Assuming you have a toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_delete_note);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        spinner = findViewById(R.id.spinner_notes); // Replace with your actual Spinner ID
+        spinner = findViewById(R.id.spinner_notes);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        // Load notes from SharedPreferences and populate Spinner
         loadNotesToSpinner();
 
         spinner.setOnItemSelectedListener(this);
@@ -51,12 +49,10 @@ public class DeleteNoteActivity extends AppCompatActivity implements AdapterView
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // Handle item selection (optional)
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        // Handle no selection (optional)
     }
 
     private void loadNotesToSpinner() {
@@ -79,7 +75,6 @@ public class DeleteNoteActivity extends AppCompatActivity implements AdapterView
             editor.putStringSet("notes", notesSet);
             editor.apply();
 
-            // Update Spinner and show a toast message
             loadNotesToSpinner();
             Toast.makeText(this, "Note deleted: " + selectedNote, Toast.LENGTH_SHORT).show();
         }
